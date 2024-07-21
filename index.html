@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>3D Model</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: #000;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .aframe-container {
+            position: absolute;
+            top: 50px;
+            width: 100%;
+            height: calc(100% - 50px);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+    </nav>
+    <div class="aframe-container">
+        <a-scene embedded>
+            <a-assets>
+                <a-asset-item 
+                    id="glbtestmodel"
+                    src="room.glb">
+                </a-asset-item>
+            </a-assets>
+            <a-entity 
+                id="glbtest"
+                gltf-model="#glbtestmodel"
+                position="0 1 -2">
+            </a-entity>
+        </a-scene>
+    </div>
+</body>
+</html>
